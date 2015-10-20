@@ -14,6 +14,7 @@
 get('/', function () {
   return redirect('/blog');
 });
+
 get('blog', 'BlogController@index');
 get('blog/{slug}', 'BlogController@showPost');
 
@@ -38,7 +39,3 @@ $router->group([
 get('/auth/login', 'Auth\AuthController@getLogin');
 post('/auth/login', 'Auth\AuthController@postLogin');
 get('/auth/logout', 'Auth\AuthController@getLogout');
-
-get('/testegit',function(){
-  return 'teste';
-});
