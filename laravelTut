@@ -1,0 +1,18 @@
+Laravel Tutorial:
+  app/http/routes.php Routes: São formas de passar parametros e e urls e forma disfarçada, uma re-
+quisição de uma url leva a outra Ex:
+raphael.dev/teste => raphael.dev/teste.php
+  Em caso de erro com routes tentar colocar index.php e verificar este link
+  http://stackoverflow.com/questions/24784606/laravel-routes-not-working-apache-configuration-only-allows-for-public-index-ph
+
+  config/app.php
+  Configura {
+    debug
+    url
+    timezone
+    Lang
+    criptografia
+  }
+  config/database.php{
+    configura banco de dados
+  }
