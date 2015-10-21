@@ -11,12 +11,10 @@
 |
 */
 // Blog pages
-get('/', function () {
-  return redirect('/blog');
-});
-
-get('blog', 'BlogController@index');
-get('blog/{slug}', 'BlogController@showPost');
+get('/', 'BlogController@index');
+get('sobre', 'BlogController@sobre');
+get('tags', 'BlogController@tags');
+get('contato', 'BlogController@contato');
 
 // Admin area
 get('admin', function () {
@@ -39,3 +37,6 @@ $router->group([
 get('/auth/login', 'Auth\AuthController@getLogin');
 post('/auth/login', 'Auth\AuthController@postLogin');
 get('/auth/logout', 'Auth\AuthController@getLogout');
+
+// Mostra o post da slug
+get('/{slug}', 'BlogController@showPost');

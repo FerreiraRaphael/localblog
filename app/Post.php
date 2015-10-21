@@ -120,7 +120,7 @@ class Post extends Model
    */
   public function url(Tag $tag = null)
   {
-    $url = url('blog/'.$this->slug);
+    $url = url($this->slug);
     if ($tag) {
       $url .= '?tag='.urlencode($tag->tag);
     }
