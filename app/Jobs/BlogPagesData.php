@@ -29,15 +29,32 @@ class BlogPagesData extends Job implements SelfHandling
             return $this->pageSobreData();
             break;
         case "tags":
-            echo "i is bar";
+            return;
             break;
         case "contato":
-            echo "i is cake";
+            return;
             break;
-        default:
         }   
     }
     public function pageSobreData()
+    {
+        return [
+            'title' => config('blog.title') . ' - ' . 'Sobre',
+            'page_image' => config('blog.page_sobre'),
+            'meta_description' => config('blog.description'),
+            'layout' => 'blog.layouts.sobre',
+        ];
+    }
+    public function pageTagsData()
+    {
+        return [
+            'title' => config('blog.title') . ' - ' . 'Sobre',
+            'page_image' => config('blog.page_sobre'),
+            'meta_description' => config('blog.description'),
+            'layout' => 'blog.layouts.sobre',
+        ];
+    }
+    public function pageContatoData()
     {
         return [
             'title' => config('blog.title') . ' - ' . 'Sobre',

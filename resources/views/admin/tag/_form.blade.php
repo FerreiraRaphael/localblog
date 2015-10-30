@@ -1,74 +1,60 @@
 <div class="form-group">
-  <label for="title" class="col-md-3 control-label">
-    Title
-  </label>
+  {!! Form::bsLabel('title', 'Titulo2',['class' => 'col-md-3']) !!}
   <div class="col-md-8">
-    <input type="text" class="form-control" name="title"
-           id="title" value="{{ $title }}">
+    {!! Form::bsText('title', $title) !!}
   </div>
 </div>
 
 <div class="form-group">
-  <label for="subtitle" class="col-md-3 control-label">
-    Subtitle
-  </label>
+  {!! Form::bsLabel('subtitle', 'Subtitulo',['class' => 'col-md-3']) !!}
   <div class="col-md-8">
-    <input type="text" class="form-control" name="subtitle"
-           id="subtitle" value="{{ $subtitle }}">
-  </div>
+   {!! Form::bsText('subtitle', $subtitle) !!}
+ </div>
 </div>
 
 <div class="form-group">
-  <label for="meta_description" class="col-md-3 control-label">
-    Meta Description
-  </label>
+  {!! Form::bsLabel('meta_description', 'Descrição',['class' => 'col-md-3']) !!}
   <div class="col-md-8">
-    <textarea class="form-control" id="meta_description"
-              name="meta_description" rows="3">{{
-      $meta_description
-    }}</textarea>
+    {!! Form::bsTextArea('meta_description', $meta_description, ['rows' => '3']) !!}
   </div>
 </div>
 
 <div class="form-group">
-  <label for="page_image" class="col-md-3 control-label">
-    Page Image
-  </label>
+  {!! Form::bsLabel('page_image', 'Imagem da Pagina',['class' => 'col-md-3']) !!}
   <div class="col-md-8">
-    <input type="text" class="form-control" name="page_image"
-           id="page_image" value="{{ $page_image }}">
+    {!! Form::bsText('page_image', $page_image) !!}
   </div>
 </div>
 
 <div class="form-group">
-  <label for="layout" class="col-md-3 control-label">
-    Layout
-  </label>
-  <div class="col-md-4">
-    <input type="text" class="form-control" name="layout" id="layout"
-           value="{{ $layout }}">
+  {!! Form::bsLabel('layout', 'Layout',['class' => 'col-md-3']) !!}
+  <div class="col-md-4">    
+    {!! Form::bsText('layout', $layout) !!}
   </div>
 </div>
 
 <div class="form-group">
-  <label for="reverse_direction" class="col-md-3 control-label">
-    Direction
-  </label>
+  {!! Form::bsLabel('reverse_direction', 'Direção',['class' => 'col-md-3']) !!}
   <div class="col-md-7">
     <label class="radio-inline">
       <input type="radio" name="reverse_direction"
-             id="reverse_direction"
+      id="reverse_direction"
       @if (! $reverse_direction)
-        checked="checked"
+      checked="checked"
       @endif
       value="0"> Normal
     </label>
     <label class="radio-inline">
       <input type="radio" name="reverse_direction"
       @if ($reverse_direction)
-        checked="checked"
+      checked="checked"
       @endif
-      value="1"> Reversed
+      value="1"> Reversa
     </label>
   </div>
+</div>
+<div class="col-md-7 col-md-offset-3">
+@foreach($buttons as $button)
+{!! Form::bsButton($button['value'],$button['options'],$button['icon']) !!}
+@endforeach
 </div>

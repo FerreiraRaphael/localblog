@@ -4,11 +4,11 @@
   <div class="container-fluid">
     <div class="row page-title-row">
       <div class="col-md-6">
-        <h3>Posts <small>» Listing</small></h3>
+        <h3>Posts <small>» Lista</small></h3>
       </div>
       <div class="col-md-6 text-right">
         <a href="/admin/post/create" class="btn btn-success btn-md">
-          <i class="fa fa-plus-circle"></i> New Post
+          <i class="fa fa-plus-circle"></i> Novo Post
         </a>
       </div>
     </div>
@@ -22,10 +22,10 @@
         <table id="posts-table" class="table table-striped table-bordered">
           <thead>
             <tr>
-              <th>Published</th>
-              <th>Title</th>
-              <th>Subtitle</th>
-              <th data-sortable="false">Actions</th>
+              <th>Publicado</th>
+              <th>Titulo</th>
+              <th>Subtitulo</th>
+              <th data-sortable="false">Ações</th>
             </tr>
           </thead>
           <tbody>
@@ -39,11 +39,11 @@
                 <td>
                   <a href="/admin/post/{{ $post->id }}/edit"
                      class="btn btn-xs btn-info">
-                    <i class="fa fa-edit"></i> Edit
+                    <i class="fa fa-edit"></i> Editar
                   </a>
                   <a href="/blog/{{ $post->slug }}"
                      class="btn btn-xs btn-warning">
-                    <i class="fa fa-eye"></i> View
+                    <i class="fa fa-eye"></i> Abrir
                   </a>
                 </td>
               </tr>
@@ -62,6 +62,12 @@
       $("#posts-table").DataTable({
         order: [[0, "desc"]]
       });
+      // $('#posts-table_next a').html('Proximo');
+      // $('#posts-table_previous a').html('Anterior');
+      // var pt_br = $('#posts-table_length label').html().replace('Show', 'Mostrar').replace('entries', 'linhas')
+      // $('#posts-table_length label').html(pt_br);
+      // var pt_br = $('#posts-table_filter label').html().replace('Search:', 'Pesquisar:');
+      // $('#posts-table_filter label').html(pt_br);
     });
   </script>
 @stop

@@ -8,10 +8,10 @@
       <div class="col-md-6">
         <h3 class="pull-left">Uploads  </h3>
         <div class="pull-left">
-          <ul class="breadcrumb">
+          <ul class="breadcrumb" style="margin-top: 10px">
             @foreach ($breadcrumbs as $path => $disp)
               <li><a href="/admin/upload?folder={{ $path }}">{{ $disp }}</a></li>
-            @endforeach
+            @endforeach            
             <li class="active">{{ $folderName }}</li>
           </ul>
         </div>

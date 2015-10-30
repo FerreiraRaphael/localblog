@@ -33,7 +33,7 @@ class TagController extends Controller
         $tags = Tag::all();
 
         return view('admin.tag.index')
-                ->withTags($tags);
+        ->withTags($tags);
     }
 
     /**
@@ -62,12 +62,12 @@ class TagController extends Controller
         $tag = new Tag();
         foreach (array_keys($this->fields) as $field) {
           $tag->$field = $request->get($field);
-        }
-        $tag->save();
+      }
+      $tag->save();
 
-        return redirect('/admin/tag')
-            ->withSuccess("The tag '$tag->tag' was created.");
-    }
+      return redirect('/admin/tag')
+      ->withSuccess("The tag '$tag->tag' was created.");
+  }
 
     /**
      * Display the specified resource.
@@ -113,8 +113,15 @@ class TagController extends Controller
         }
         $tag->save();
 
-        return redirect("/admin/tag/$id/edit")
-            ->withSuccess("Changes saved.");
+        if ($request->action === 'continue') {
+            return redirect()
+                ->back()
+                ->withSuccess('Tag saved.');
+            }
+
+        return redirect()
+            ->route('admin.tag.index')
+            ->withSuccess('Tag saved.');
     }
 
     /**
@@ -129,6 +136,6 @@ class TagController extends Controller
         $tag->delete();
 
         return redirect('/admin/tag')
-            ->withSuccess("The '$tag->tag' tag has been deleted.");
+        ->withSuccess("The '$tag->tag' tag has been deleted.");
     }
 }

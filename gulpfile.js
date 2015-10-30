@@ -73,10 +73,16 @@ gulp.task("copyfiles", function() {
   gulp.src("vendor/bower_dl/pickadate/lib/compressed/picker.time.js")
       .pipe(gulp.dest("public/assets/pickadate/"));
 
-  // Copy CleanBlog css
+  // Copy CleanBlog less
     gulp.src("vendor/bower_dl/clean-blog/less/**")
         .pipe(gulp.dest("resources/assets/less/clean-blog"));
 
+  // Copy jQuery Validation
+    gulp.src('vendor/bower_dl/jquery-validation/dist/jquery.validate.min.js')
+      .pipe(gulp.dest("public/assets/jquery-validation"));
+
+    gulp.src('vendor/bower_dl/jquery-validation/localization/messages_pt_BR.js')
+      .pipe(gulp.dest("public/assets/jquery-validation"));
 });
 
 /**
@@ -101,7 +107,7 @@ elixir(function(mix) {
         'js/blog.js'
     ], 'public/assets/js/blog.js', 'resources//assets');
 
-  // Compile sass
+  // Compile sass w less
   mix.sass('admin.scss', 'public/assets/css/admin.css');
   mix.less('blog.less', 'public/assets/css/blog.css');
 });

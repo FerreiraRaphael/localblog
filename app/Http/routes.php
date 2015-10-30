@@ -26,11 +26,11 @@ $router->group([
 ], function () {
   resource('admin/post', 'PostController', ['except' => 'show']);
   resource('admin/tag', 'TagController', ['except' => 'show']);
-  get('admin/upload', 'UploadController@index');
-  post('admin/upload/file', 'UploadController@uploadFile');
-  delete('admin/upload/file', 'UploadController@deleteFile');
-  post('admin/upload/folder', 'UploadController@createFolder');
-  delete('admin/upload/folder', 'UploadController@deleteFolder');
+  get('admin/upload','UploadController@index')->name('admin.upload.index');
+  post('admin/upload/file', 'UploadController@uploadFile')->name('admin.upload.file');
+  delete('admin/upload/file', 'UploadController@deleteFile')->name('admin.upload.file.destroy');
+  post('admin/upload/folder','UploadController@createFolder')->name('admin.upload.folder');
+  delete('admin/upload/folder', 'UploadController@deleteFolder')->name('admin.upload.folder.destroy');
 });
 
 // Logging in and out

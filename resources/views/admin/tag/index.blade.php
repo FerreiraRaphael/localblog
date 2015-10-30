@@ -4,11 +4,11 @@
   <div class="container-fluid">
     <div class="row page-title-row">
       <div class="col-md-6">
-        <h3>Tags <small>» Listing</small></h3>
+        <h3>Tags <small>» Lista</small></h3>
       </div>
       <div class="col-md-6 text-right">
         <a href="/admin/tag/create" class="btn btn-success btn-md">
-          <i class="fa fa-plus-circle"></i> New Tag
+          <i class="fa fa-plus-circle"></i> Nova Tag
         </a>
       </div>
     </div>
@@ -23,13 +23,13 @@
           <thead>
           <tr>
             <th>Tag</th>
-            <th>Title</th>
-            <th class="hidden-sm">Subtitle</th>
-            <th class="hidden-md">Page Image</th>
-            <th class="hidden-md">Meta Description</th>
+            <th>Titulo</th>
+            <th class="hidden-sm">Subtitulo</th>
+            <th class="hidden-md">Imagem da Pagina</th>
+            <th class="hidden-md">Descrição</th>
             <th class="hidden-md">Layout</th>
-            <th class="hidden-sm">Direction</th>
-            <th data-sortable="false">Actions</th>
+            <th class="hidden-sm">Direção</th>
+            <th data-sortable="false">Ações</th>
           </tr>
           </thead>
           <tbody>
@@ -43,7 +43,7 @@
               <td class="hidden-md">{{ $tag->layout }}</td>
               <td class="hidden-sm">
                 @if ($tag->reverse_direction)
-                  Reverse
+                  Reverça
                 @else
                   Normal
                 @endif
@@ -51,7 +51,7 @@
               <td>
                 <a href="/admin/tag/{{ $tag->id }}/edit"
                    class="btn btn-xs btn-info">
-                  <i class="fa fa-edit"></i> Edit
+                  <i class="fa fa-edit"></i> Editar
                 </a>
               </td>
             </tr>
@@ -66,8 +66,9 @@
 @section('scripts')
   <script>
     $(function() {
-      $("#tags-table").DataTable({
-      });
+      $("#tags-table").DataTable({});
+      // $('#tags-table_next a').html('Proximo');
+      // $('#tags-table_previous a').html('Anterior');      
     });
   </script>
 @stop

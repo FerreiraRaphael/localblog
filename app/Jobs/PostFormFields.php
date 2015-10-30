@@ -86,7 +86,7 @@ class PostFormFields extends Job implements SelfHandling
 
     $fields = ['id' => $id];
     foreach ($fieldNames as $field) {
-      $fields[$field] = $post->{$field};
+      $fields[$field] = $post->$field;
     }
 
     $fields['tags'] = $post->tags()->lists('tag')->all();

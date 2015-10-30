@@ -25,15 +25,15 @@ class UploadController extends Controller
 	  public function index(Request $request)
 	  {
 	    $folder = $request->get('folder');
-	    $data = $this->manager->folderInfo($folder);
 
+	    $data = $this->manager->folderInfo($folder);
+      // dd($data);
 	    return view('admin.upload.index', $data);
 	  }
 	  public function createFolder(UploadNewFolderRequest $request)
   {
     $new_folder = $request->get('new_folder');
     $folder = $request->get('folder').'/'.$new_folder;
-
     $result = $this->manager->createDirectory($folder);
 
     if ($result === true) {

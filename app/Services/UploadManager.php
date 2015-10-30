@@ -33,14 +33,14 @@ class UploadManager
     $folder = $this->cleanFolder($folder);
 
     $breadcrumbs = $this->breadcrumbs($folder);
-    $slice = array_slice($breadcrumbs, -1);
+    $slice = array_slice($breadcrumbs, -1);  
     $folderName = current($slice);
     $breadcrumbs = array_slice($breadcrumbs, 0, -1);
 
     $subfolders = [];
     foreach (array_unique($this->disk->directories($folder)) as $subfolder) {
       $subfolders["/$subfolder"] = basename($subfolder);
-  }
+    }
 
     $files = [];
     foreach ($this->disk->files($folder) as $path) {

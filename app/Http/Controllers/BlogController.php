@@ -41,11 +41,13 @@ class BlogController extends Controller
   }
 
   public function tags(){
-    return view('blog.layouts.tags');
+    $data = $this->dispatch(new BlogPagesData('tags'));
+    return view($data['layout'] ,$data);
   }
 
   public function contato(){
-    return view('blog.layouts.contato');
+    $data = $this->dispatch(new BlogPagesData('contato'));
+    return view($data['layout'] ,$data);
   }
 }
 

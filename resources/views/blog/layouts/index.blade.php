@@ -18,12 +18,13 @@
 @stop
 
 @section('content')
-  <div class="container">
+  @include('blog.partials.posts')
+  {{-- <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"> --}}
 
         {{-- The Posts --}}
-        @foreach ($posts as $post)
+     {{--    @foreach ($posts as $post)
           <div class="post-preview">
             <a href="{{ $post->url($tag) }}">
               <h2 class="post-title">{{ $post->title }}</h2>
@@ -43,12 +44,12 @@
           </div>
           <hr>
         @endforeach
-
+ --}}
         {{-- The Pager --}}
-        <ul class="pager">
+        {{-- <ul class="pager"> --}}
 
           {{-- Reverse direction --}}
-          @if ($reverse_direction)
+{{--           @if ($reverse_direction)
             @if ($posts->currentPage() > 1)
               <li class="previous">
                 <a href="{!! $posts->url($posts->currentPage() - 1) !!}">
@@ -87,5 +88,5 @@
       </div>
 
     </div>
-  </div>
+  </div> --}}
 @stop

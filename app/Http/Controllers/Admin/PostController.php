@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
 
 use App\Jobs\PostFormFields;
@@ -54,7 +53,7 @@ class PostController extends Controller
   public function edit($id)
   {
     $data = $this->dispatch(new PostFormFields($id));
-
+    $data['post'] = Post::findOrFail($id);
     return view('admin.post.edit', $data);
   }
 
