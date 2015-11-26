@@ -5,3 +5,4 @@ Homestead.json
 .env
 anotacoes.json
 sql/
+public/.htacess
