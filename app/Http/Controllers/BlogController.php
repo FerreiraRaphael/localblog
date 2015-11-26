@@ -22,7 +22,10 @@ class BlogController extends Controller
     $tag = $request->get('tag');
     $data = $this->dispatch(new BlogIndexData($tag));
     $layout = $tag ? Tag::layout($tag) : 'blog.layouts.index';
-    return view($layout, $data);
+    if(!config('app.manutencao'))
+      return view($layout, $data);
+    else
+      return view('manutencao', $data);
   }
 
   public function showPost($slug, Request $request)

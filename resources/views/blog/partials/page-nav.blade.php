@@ -14,7 +14,7 @@
     </div>
 
     {{-- Collect the nav links, forms, and other content for toggling --}}
-    <div class="collapse navbar-collapse" id="navbar-main">
+    <!-- <div class="collapse navbar-collapse" id="navbar-main">
       <ul class="nav navbar-nav navbar-right">
         <li>
           <a href="/">Home</a>
@@ -22,14 +22,14 @@
         <li>
           <a href="sobre">Sobre</a>
         </li>
-       <!-- Abas Em progresso
+        Abas Em progresso
         <li>
           <a href="/">Tags</a>
         </li>
        <li>
           <a href="/">Contato</a>
-        </li>-->
+        </li>
       </ul>
-    </div>
+    </div> -->
   </div>
 </nav>

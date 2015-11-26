@@ -12,9 +12,10 @@
 */
 // Blog pages
 get('/', 'BlogController@index');
-get('sobre', 'BlogController@sobre');
-get('tags', 'BlogController@tags');
-get('contato', 'BlogController@contato');
+//get('sobre', 'BlogController@sobre');
+// get('tags', 'BlogController@tags');
+// get('contato', 'BlogController@contato');
+// get('teste', 'BlogController@teste');
 
 // Admin area
 get('admin', function () {

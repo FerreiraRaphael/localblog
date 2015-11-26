@@ -83,6 +83,10 @@ gulp.task("copyfiles", function() {
 
     gulp.src('vendor/bower_dl/jquery-validation/localization/messages_pt_BR.js')
       .pipe(gulp.dest("public/assets/jquery-validation"));
+
+  //PDF JS
+    gulp.src('vendor/bower_dl/pdfjs-bower/dist/**')
+      .pipe(gulp.dest("public/assets/pdf-js/"));  
 });
 
 /**
